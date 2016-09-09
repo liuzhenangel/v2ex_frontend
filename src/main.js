@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import App from './components/App.vue'
-import Hello from './components/Hello.vue'
+import Index from './components/Index.vue'
 import Test from './components/test.vue'
 
 Vue.use(VueResource)
@@ -14,9 +14,9 @@ const router = new VueRouter({
 })
 
 router.map({
-  '/hello': {
-    name: 'hello',
-    component: Hello
+  '/index': {
+    name: 'index',
+    component: Index
   },
   '/test': {
     name: 'test',
@@ -25,7 +25,7 @@ router.map({
 })
 
 router.redirect({
-  '*': '/test'
+  '*': '/index'
 })
 
 router.start(App, '#app')

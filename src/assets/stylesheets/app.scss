@@ -1,0 +1,16 @@
+@import 'variables';
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: $my-body-bg;
+}
+
+#app-wrapper {
+  position: fixed;
+  width: 100%;
+  background-color: $my-topbar-bg;
+}
