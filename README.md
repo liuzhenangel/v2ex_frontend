@@ -1,4 +1,4 @@
-# v2ex-app
+# v2ex-frontend
 
 > A Vue.js project
 
