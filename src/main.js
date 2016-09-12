@@ -4,9 +4,11 @@ import VueResource from 'vue-resource'
 import App from './components/App.vue'
 import Index from './components/Index.vue'
 import Test from './components/test.vue'
+import VueMoment from 'moment'
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
+Vue.use(VueMoment)
 
 const router = new VueRouter({
   history: true,
@@ -27,6 +29,18 @@ router.map({
   '/test': {
     name: 'test',
     component: Test
+  },
+
+  '/login': {
+    component: function (resolve) {
+      require(['./components/Login.vue'], resolve)
+    }
+  },
+
+  '/register': {
+    component: function (resolve) {
+      require(['./components/Register.vue'], resolve)
+    }
   }
 })
 

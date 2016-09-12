@@ -1,14 +1,14 @@
-import marked from 'marked'
+import Vue from 'vue'
+import VueResource from 'vue-resource'
 
 let API_ROOT = 'https://www.v2ex.com/api/'
 
-export const setBlogs = function ({ dispatch }, page, size = 5) {
-  dispatch('SET_ISFETCH', 0)
-  this.$http.get(API_ROOT + 'topics/hot.json', {
-  }).then(function (res) {
-    dispatch('SET_BLOGS', res)
-    dispatch('SET_ISFETCH', 1)
-  }).then(function (err) {
-    console.log(err)
+Vue.use(VueResource)
+
+export const initDate = function () {
+  this.$http.get(API_ROOT + 'topics/hot.json').then((response) => {
+    return response
+  }, (response) => {
+    console.log(response)
   })
 }

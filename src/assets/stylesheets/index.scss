@@ -1,74 +1,32 @@
-@import 'variables';
-
-.text-center {
-  text-align: center;
+.line-top {
+  border-top: 1px solid #E5E5E5;
+}
+.line-bottom {
+  border-bottom: 1px solid #E5E5E5;
 }
 
-#index-wrapper {
-  padding-top: 50px;
-  margin: 0 auto;
-  width: 60%;
-  font-size: 14px;
+.inner {
+  padding-top: 10px;
+}
 
-  #Rightbar {
-    background-color: $my-content-bg;
-    float: right;
-    width: 303px;
-    margin-right: 20px;
-  }
+.topic-title {
+  color: #5e5e5e;
 
-  #Main {
-    margin-top: 15px;
-  }
-
-  .box {
-    border-radius: 3px;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #e2e2e2;
-  }
-
-  #Rightbar {
-    font-size: 12px;
-    .cell-bar {
-      padding: 14px;
-      line-height: 20px;
-      border-bottom: 1px solid #ddd;
-
-      .description {
-        color: #a7a5a5;
-      }
-    }
-
-    .inner {
-      margin: 13px 0;
-      line-height: 30px;
-    }
-  }
-
-  .cell {
-    width: 70%;
-    background-color: $my-content-bg;
-    display: inline-block;
-
-    .box-title {
-      padding: 14px;
-      a.active {
-        background-color: #555;
-        color: #fff;
-      }
-      a {
-        color: #555;
-        padding: 5px;
-
-        &:hover {
-          background-color: #555;
-          color: #fff;
-        }
-      }
-    }
-  }
-
-  a {
+  &:hover {
+    color: #909090;
     text-decoration: none;
   }
+}
+.node-title {
+  color: #5e5e5e;
+
+  &:hover {
+    color: #fff;
+    background-color: #909090;
+    text-decoration: none;
+  }
+}
+
+.uk-badge-notification {
+  background: #aba9a9;
 }

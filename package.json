@@ -13,12 +13,13 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "vue": "^1.0.21",
     "babel-runtime": "^6.0.0",
+    "moment": "^2.15.0",
+    "vue": "^1.0.21",
     "vue-resource": "^1.0.0",
     "vue-router": "^0.7.13",
-    "vue-validator": "^2.1.6",
-    "vue-strap": "^1.1.15"
+    "vue-strap": "^1.1.15",
+    "vue-validator": "^2.1.6"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
