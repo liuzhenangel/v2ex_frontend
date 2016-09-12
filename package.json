@@ -17,7 +17,8 @@
     "babel-runtime": "^6.0.0",
     "vue-resource": "^1.0.0",
     "vue-router": "^0.7.13",
-    "vue-validator": "^2.1.6"
+    "vue-validator": "^2.1.6",
+    "vue-strap": "^1.1.15"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -59,6 +60,7 @@
     "karma-webpack": "^1.7.0",
     "lolex": "^1.4.0",
     "mocha": "^2.4.5",
+    "marked": "^0.3.6",
     "nightwatch": "^0.8.18",
     "node-sass": "^3.9.3",
     "ora": "^0.2.0",

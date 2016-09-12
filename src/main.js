@@ -18,6 +18,12 @@ router.map({
     name: 'index',
     component: Index
   },
+
+  '/index?tab=tech': {
+    name: 'index?tab=tech',
+    component: Index
+  },
+
   '/test': {
     name: 'test',
     component: Test
