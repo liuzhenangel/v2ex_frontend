@@ -12,7 +12,7 @@
         <div>
           <span class='node-title'>{{ topic.node.title }}</span>
           •
-          <a href="/member/{{topic.member.id}}" class='username'>{{ topic.member.username }}</span>
+          <a href="/member/{{topic.member.id}}" class='username'>{{ topic.member.username }}</a>
           •
           <span class='created'>{{ topic.created }}</span>
         </div>
