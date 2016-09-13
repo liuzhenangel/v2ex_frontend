@@ -26,7 +26,7 @@
 
     <div class='uk-text-center uk-margin-top' id='footer'>
       <div class='uk-panel uk-panel-box'>
-        <p><a href='v2ex.liuzhen.me'>v2ex.liuzhen.me</a> © 2016 - 2016</p>
+        <p><a href='http://v2ex.liuzhen.me' target='_blank'>v2ex.liuzhen.me</a> © 2016 - 2016</p>
       </div>
     </div>
   </div>

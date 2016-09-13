@@ -3,37 +3,39 @@
     <subnav></subnav>
     <hr class='uk-article-divider'>
 
-    <div class='uk-alert'>
+    <div class='uk-alert' v-if='isBlank()'>
       没有数据~
     </div>
 
-    <div class='line' v-for='list in topics | filterBy category'>
+    <div class='line' v-for='topic in topics | filterBy category'>
       <div class='uk-grid' data-uk-grid-margin>
         <div class='uk-width-1-10'>
-          <a href="/member/{{list.member.id}}">
-            <img v-bind:src="list.member.avatar_normal"></img>
+          <a href="/member/{{topic.member.id}}">
+            <img v-bind:src="topic.member.avatar_normal"></img>
           </a>
         </div>
         <div class='uk-width-8-10'>
-          <h2 class='uk-h3'><a href="/show/{{list.id}}" class='topic-title'>{{ list.title }}</a></h2>
+          <h2 class='uk-h3'><a href="/show/{{topic.id}}" class='topic-title'>{{ topic.title }}</a></h2>
           <div>
-            <span>{{ list.node.title }}</span>
+            <span>{{ topic.node.title }}</span>
               •
-            <a href="/member/{{list.member.id}}" class='username'>{{ list.member.username }}</a>
+            <a href="/member/{{topic.member.id}}" class='username'>{{ topic.member.username }}</a>
               •
-            <span class='created'>{{ list.created }}</span>
+            <span class='created'>{{ topic.created }}</span>
           </div>
         </div>
         <div class='uk-width-1-10 line-height-59'>
-          <p class='uk-text-right uk-badge uk-badge-notification'>{{ list.replies }}</p>
+          <p class='uk-text-right uk-badge uk-badge-notification'>{{ topic.replies }}</p>
         </div>
       </div>
       <hr class='uk-article-divider'>
     </div>
+
 </template>
 
 <script>
   import Subnav from './Subnav'
+  import _ from 'lodash'
 
   export default {
     components: {
@@ -65,7 +67,10 @@
       },
 
       isBlank: function () {
-        return false
+        let categoryTopic = _.find(this.topics, (topic) => {
+          return this.category(topic)
+        })
+        return categoryTopic === undefined
       },
 
       category: function (val) {
