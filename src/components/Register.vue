@@ -1,5 +1,5 @@
 <template>
-  <div class="uk-container-center uk-width-medium-2-3">
+  <div class="uk-container-center uk-width-medium-3-4">
     <h3 class="uk-text-center uk-margin-top">注册</h3>
     <div class="uk-alert uk-alert-danger" v-if="message" v-text="message"></div>
     <form class="uk-form uk-form-stacked uk-panel uk-panel-box" v-on:submit.prevent="submit">
@@ -15,7 +15,7 @@
         <label class="uk-form-label uk-hidden-small">电子邮箱</label>
         <div class="uk-form-controls uk-form-icon">
           <i class="uk-icon-envelope-o"></i>
-          <input class="uk-form-large uk-form-width-large" type="text" placeholder="电子邮箱" maxlength="50" v-model="username">
+          <input class="uk-form-large uk-form-width-large" type="text" placeholder="电子邮箱" maxlength="50" v-model="email">
         </div>
       </div>
 
@@ -46,8 +46,8 @@
 export default {
   methods: {
     submit: function () {
-      if (this.username.trim() === '' || this.password === '') {
-        this.message = '用户名或密码不能为空'
+      if (this.username.trim() === '' || this.password === '' || this.email === '') {
+        this.message = '用户名, 邮箱, 密码都能为空'
       } else {
         this.register(this.username, this.password)
       }
@@ -56,6 +56,7 @@ export default {
   data () {
     return {
       username: '',
+      email: '',
       password: '',
       password1: '',
       message: ''

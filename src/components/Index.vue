@@ -3,6 +3,10 @@
     <subnav></subnav>
     <hr class='uk-article-divider'>
 
+    <div class='uk-alert'>
+      没有数据~
+    </div>
+
     <div class='line' v-for='list in topics | filterBy category'>
       <div class='uk-grid' data-uk-grid-margin>
         <div class='uk-width-1-10'>
@@ -38,7 +42,6 @@
 
     data () {
       return {
-        latest: [],
         topics: [],
         tab: ''
       }
@@ -49,21 +52,24 @@
     events: {
       tab: function (tab) {
         this.$set('tab', tab)
-        console.log(tab)
       }
     },
     methods: {
       initData: function () {
         this.$http.get('/api/topics/latest.json').then(function (response) {
-          this.$set('latest', response.body)
           this.$set('topics', response.body)
           console.log(response.body)
         }).then(function (err) {
           console.log(err)
         })
       },
+
+      isBlank: function () {
+        return false
+      },
+
       category: function (val) {
-        if (this.tab === 'tech' || this.tab === '') {
+        if (this.tab === 'tech' || this.tab === '' || this.tab === 'all') {
           return true
         } else {
           return val.node.name === this.tab

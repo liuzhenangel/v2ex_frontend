@@ -1,5 +1,5 @@
 <template>
-  <div class="uk-container-center uk-width-medium-2-3">
+  <div class="uk-container-center uk-width-medium-3-4">
     <h3 class="uk-text-center uk-margin-top">登录</h3>
     <div class="uk-alert uk-alert-danger" v-show="message" v-text="message"></div>
     <form class="uk-form uk-form-stacked uk-panel uk-panel-box" v-on:submit.prevent="submit">
