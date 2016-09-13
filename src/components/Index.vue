@@ -40,27 +40,26 @@
           </ul>
         </div>
         <hr class='uk-article-divider'>
-        <div class='uk-grid' data-uk-grid-margin>
-          <div class='uk-width-medium-1-1 line-bottom' v-for='list in datas'>
-            <div class='uk-grid uk-margin-top'>
-              <div class='uk-width-1-10'>
-                <img v-bind:src="list.member.avatar_normal"></img>
-              </div>
-              <div class='uk-width-8-10'>
-                <h2 class='uk-h3'><a href="{{ list.url }}" target='_blank' class='topic-title'>{{ list.title }}</a></h2>
-                <div>
-                  <a href="{{list.node.url}}" class='node-title'>{{ list.node.title }}</a>
-                    •
-                  <span class='username'>{{ list.member.username }}</span>
-                    •
-                  <span class='created'>{{ list.created }}</span>
-                </div>
-              </div>
-              <div class='uk-width-1-10'>
-                <p class='uk-text-right uk-badge uk-badge-notification'>{{ list.replies }}</p>
+        <div class='line' v-for='list in datas'>
+          <div class='uk-grid' data-uk-grid-margin>
+            <div class='uk-width-1-10'>
+              <img v-bind:src="list.member.avatar_normal"></img>
+            </div>
+            <div class='uk-width-8-10'>
+              <h2 class='uk-h3'><a href="{{ list.url }}" target='_blank' class='topic-title'>{{ list.title }}</a></h2>
+              <div>
+                <a href="{{list.node.url}}" class='node-title'>{{ list.node.title }}</a>
+                  •
+                <span class='username'>{{ list.member.username }}</span>
+                  •
+                <span class='created'>{{ list.created }}</span>
               </div>
             </div>
+            <div class='uk-width-1-10'>
+              <p class='uk-text-right uk-badge uk-badge-notification'>{{ list.replies }}</p>
+            </div>
           </div>
+          <hr class='uk-article-divider'>
         </div>
       </div>
     </div>
