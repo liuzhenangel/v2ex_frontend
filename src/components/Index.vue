@@ -1,9 +1,9 @@
 <template>
   <div class='uk-panel uk-panel-box'>
-    <subnav v-bind:latest="latest"></subnav>
+    <subnav></subnav>
     <hr class='uk-article-divider'>
 
-    <div class='line' v-for='list in latest'>
+    <div class='line' v-for='list in topics | filterBy category'>
       <div class='uk-grid' data-uk-grid-margin>
         <div class='uk-width-1-10'>
           <a href="/member/{{list.member.id}}">
@@ -38,23 +38,36 @@
 
     data () {
       return {
-        latest: []
+        latest: [],
+        topics: [],
+        tab: ''
       }
     },
     ready: function () {
       this.initData()
     },
+    events: {
+      tab: function (tab) {
+        this.$set('tab', tab)
+        console.log(tab)
+      }
+    },
     methods: {
       initData: function () {
         this.$http.get('/api/topics/latest.json').then(function (response) {
           this.$set('latest', response.body)
+          this.$set('topics', response.body)
           console.log(response.body)
         }).then(function (err) {
           console.log(err)
         })
       },
-      category: function () {
-        console.log('xxx')
+      category: function (val) {
+        if (this.tab === 'tech' || this.tab === '') {
+          return true
+        } else {
+          return val.node.name === this.tab
+        }
       }
     }
   }

@@ -5,34 +5,34 @@
         <a href='/index?tab=tech' v-on:click="category('tech')">技术</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=creative'>创意</a>
+        <a href='/index?tab=creative' v-on:click="category('creative')">创意</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=play'>好玩</a>
+        <a href='/index?tab=play' v-on:click="category('play')">好玩</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=apple'>Apple</a>
+        <a href='/index?tab=apple' v-on:click="category('apple')">Apple</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=jobs'>酷工作</a>
+        <a href='/index?tab=jobs' v-on:click="category('jobs')">酷工作</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=deals'>交易</a>
+        <a href='/index?tab=deals' v-on:click="category('deals')">交易</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=city'>城市</a>
+        <a href='/index?tab=city' v-on:click="category('city')">城市</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=qna'>问与答</a>
+        <a href='/index?tab=qna' v-on:click="category('qna')">问与答</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=hot'>最热</a>
+        <a href='/index?tab=hot' v-on:click="category('hot')">最热</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=all'>全部</a>
+        <a href='/index?tab=all' v-on:click="category('all')">全部</a>
       </li>
       <li aria-expanded="false">
-        <a href='/index?tab=r2'>R2</a>
+        <a href='/index?tab=r2' v-on:click="category('r2')">R2</a>
       </li>
     </ul>
   </div>
@@ -41,12 +41,8 @@
 <script>
   export default {
     methods: {
-      category: function () {
-        console.log(this.lastes)
-        console.log(this.$refs.lastes)
-        console.log(this.$parent.lastes)
-        console.log(this.$children.lastes)
-        console.log('xxx')
+      category: function (tab) {
+        this.$dispatch('tab', tab)
       }
     }
   }
