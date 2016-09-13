@@ -17,7 +17,6 @@
     "lodash": "^4.15.0",
     "moment": "^2.15.0",
     "vue": "^1.0.21",
-    "vue-paginate": "^2.1.2",
     "vue-resource": "^1.0.0",
     "vue-router": "^0.7.13",
     "vue-strap": "^1.1.15",
