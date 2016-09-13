@@ -1,3 +1,22 @@
+@import 'panel';
+
+.uk-table.no-bottom-line {
+  td, th {
+    border-bottom: none;
+  }
+}
+
+.no-margin-top-bottom {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.uk-table {
+  td, th {
+    vertical-align: middle;
+  }
+}
+
 .line-top {
   border-top: 1px solid #E5E5E5;
 }
@@ -6,7 +25,7 @@
 }
 
 .inner {
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
 .topic-title {
@@ -17,6 +36,16 @@
     text-decoration: none;
   }
 }
+a.username {
+  color: #616060;
+  font-weight: 500;
+  &:hover {
+    color: #fff;
+    background-color: #909090;
+    text-decoration: none;
+  }
+}
+
 .node-title {
   color: #5e5e5e;
 
@@ -29,4 +58,8 @@
 
 .uk-badge-notification {
   background: #aba9a9;
+}
+
+.line-height-59 {
+  line-height: 59px;
 }

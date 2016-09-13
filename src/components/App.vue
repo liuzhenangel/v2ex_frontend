@@ -10,15 +10,43 @@
         <li><a href='/login'>登录</a></li>
       </ul>
     </nav>
-    <router-view></router-view>
+
+    <div class='uk-grid' data-uk-grid-margin>
+      <div class='uk-width-medium-3-4 uk-row-first'>
+        <router-view></router-view>
+      </div>
+      <div class='uk-width-medium-1-4'>
+        <v2ex></v2ex>
+        <promotion></promotion>
+        <hotopics></hotopics>
+        <stats></stats>
+      </div>
+    </div>
+
     <div class='uk-text-center uk-margin-top' id='footer'>
       <div class='uk-panel uk-panel-box'>
-        <p><a href='liuzhen.me'>liuzhen.me</a> © 2016 - 2016</p>
+        <p><a href='v2ex.liuzhen.me'>v2ex.liuzhen.me</a> © 2016 - 2016</p>
       </div>
     </div>
   </div>
+
 </template>
 
 <style lang="sass">
   @import '../assets/stylesheets/app.scss'
 </style>
+
+<script>
+  import V2ex from './V2ex'
+  import Promotion from './Promotion'
+  import Hotopics from './Hotopics'
+  import Stats from './Stats'
+  export default {
+    components: {
+      V2ex,
+      Promotion,
+      Hotopics,
+      Stats
+    }
+  }
+</script>

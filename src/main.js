@@ -4,6 +4,8 @@ import VueResource from 'vue-resource'
 import App from './components/App.vue'
 import Index from './components/Index.vue'
 import Test from './components/test.vue'
+import Show from './components/Show.vue'
+import Member from './components/Member.vue'
 import VueMoment from 'moment'
 
 Vue.use(VueResource)
@@ -24,6 +26,16 @@ router.map({
   '/index?tab=tech': {
     name: 'index?tab=tech',
     component: Index
+  },
+
+  '/show/:id': {
+    name: 'show',
+    component: Show
+  },
+
+  '/member/:id': {
+    name: 'member',
+    component: Member
   },
 
   '/test': {

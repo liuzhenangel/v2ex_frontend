@@ -26,7 +26,7 @@ module.exports = {
         target: 'https://www.v2ex.com',
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          '^/api': '/api'
         }
       }
     },

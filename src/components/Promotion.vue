@@ -1,0 +1,19 @@
+<template>
+  <div class="panel panel-default">
+    <div class="panel-heading">推广</div>
+    <ul class='uk-nav uk-nav-side'>
+      <li>
+        <a href='http://liuzhen.me' target='_blank'>Rina's Blog</a>
+      </li>
+      <li>
+        <a href='https://github.com/liuzhenangel' target='_blank'>Rina's Github</a>
+      </li>
+      <li>
+        <a href='https://github.com/liuzhenangel/v2ex_frontend' target='_blank'>V2EX Code</a>
+      </li>
+      <li>
+        <a href='https://github.com/liuzhenangel/Rina_Blog' target='_blank'>Blog Code</a>
+      </li>
+    </ul>
+  </div>
+</template>
