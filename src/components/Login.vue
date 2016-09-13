@@ -1,28 +1,30 @@
 <template>
-    <div class="login-wrapper uk-container-center uk-width-medium-1-3 uk-width-small-1-2">
-    <h3 class="uk-text-center uk-margin-top">欢迎回来！</h3>
-    <div class="uk-alert uk-alert-danger" v-if="message" v-text="message"></div>
+  <div class="uk-container-center uk-width-medium-2-3">
+    <h3 class="uk-text-center uk-margin-top">登录</h3>
+    <div class="uk-alert uk-alert-danger" v-show="message" v-text="message"></div>
     <form class="uk-form uk-form-stacked uk-panel uk-panel-box" v-on:submit.prevent="submit">
         <div class="uk-alert uk-alert-danger" hidden="hidden"></div>
         <div class="uk-form-row">
-            <label class="uk-form-label uk-hidden-small">用户名:</label>
-            <div class="uk-form-controls uk-form-icon">
-                <i class="uk-icon-envelope-o"></i>
-                <input class="uk-form-large uk-form-width-large" type="text" placeholder="用户名" maxlength="50" v-model="username">
-            </div>
+          <label class="uk-form-label uk-hidden-small">用户名</label>
+          <div class="uk-form-controls uk-form-icon">
+            <i class="uk-icon-envelope-o"></i>
+            <input class="uk-form-large uk-form-width-large" type="text" placeholder="用户名或电子邮箱" maxlength="50" v-model="username">
+          </div>
         </div>
+
         <div class="uk-form-row">
-            <label class="uk-form-label uk-hidden-small">输入密码:</label>
-            <div class="uk-form-controls uk-form-icon">
-                <i class="uk-icon-lock"></i>
-                <input class="uk-form-large uk-form-width-large" type="password" placeholder="输入密码" maxlength="50" v-model="password">
-            </div>
+          <label class="uk-form-label uk-hidden-small">密码</label>
+          <div class="uk-form-controls uk-form-icon">
+            <i class="uk-icon-lock"></i>
+            <input class="uk-form-large uk-form-width-large" type="password" maxlength="50" v-model="password">
+          </div>
         </div>
+
         <div class="uk-form-row">
-            <button type="submit" class="uk-width-1-1 uk-button uk-button-primary uk-button-large"><i class="uk-icon-sign-in"></i> 登录</button>
+          <button type="submit" class="uk-width-1-1 uk-button uk-button-primary uk-button-large"><i class="uk-icon-sign-in"></i> 登录</button>
         </div>
-    </form>
-</div>
+      </form>
+    </div>
 </template>
 
 <script>
@@ -45,6 +47,6 @@ export default {
   }
 }
 </script>
+
 <style lang="sass">
-  @import "../assets/stylesheets/login.scss"
 </style>

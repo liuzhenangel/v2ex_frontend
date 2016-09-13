@@ -5,9 +5,10 @@
         <img src='//cdn.v2ex.co/site/logo@2x.png?m=1346064962'></img>
       </a>
       <ul class='uk-navbar-nav uk-hidden-small uk-navbar-flip'>
-        <li><a href='/'>首页</a></li>
-        <li><a href='/register'>注册</a></li>
-        <li><a href='/login'>登录</a></li>
+        <li><a href='/' v-if='! logined'>首页</a></li>
+        <li><a href='/register' v-if='! logined'>注册</a></li>
+        <li><a href='/login' v-if='! logined'>登录</a></li>
+        <li><a href='/login' v-if='logined'>退出</a></li>
       </ul>
     </nav>
 
@@ -16,7 +17,7 @@
         <router-view></router-view>
       </div>
       <div class='uk-width-medium-1-4'>
-        <v2ex></v2ex>
+        <v2ex v-bind:logined="logined"></v2ex>
         <promotion></promotion>
         <hotopics></hotopics>
         <stats></stats>
@@ -47,6 +48,11 @@
       Promotion,
       Hotopics,
       Stats
+    },
+    data () {
+      return {
+        logined: false
+      }
     }
   }
 </script>
