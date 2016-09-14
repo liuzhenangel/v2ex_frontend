@@ -47,7 +47,6 @@
       initData: function () {
         this.$http.get('/api/topics/show.json', {params: {id: this.$route.params.id}}).then(function (response) {
           this.$set('topic', response.body[0])
-          console.log('show', response)
         }).then(function (err) {
           console.log(err)
         })

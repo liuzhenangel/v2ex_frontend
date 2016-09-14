@@ -33,7 +33,6 @@
       initData: function () {
         this.$http.get('/api/site/stats.json').then(function (response) {
           this.$set('stats', response.body)
-          console.log(response.body)
         }).then(function (err) {
           console.log(err)
         })

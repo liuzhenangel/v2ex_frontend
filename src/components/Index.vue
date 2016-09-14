@@ -67,7 +67,6 @@
     },
     watch: {
       '$route': function () {
-        console.log(this.$route.query.tab)
         this.fullTopics = this.categoryTopics()
       }
     },

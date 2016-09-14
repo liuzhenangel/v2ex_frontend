@@ -28,7 +28,6 @@
       initData: function () {
         this.$http.get('/api/members/show.json', {params: {id: this.$route.params.id}}).then(function (response) {
           this.$set('member', response.body)
-          console.log('member', response)
         }).then(function (err) {
           console.log(err)
         })
