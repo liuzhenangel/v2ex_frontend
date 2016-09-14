@@ -7,10 +7,12 @@ import Test from './components/test.vue'
 import Show from './components/Show.vue'
 import Member from './components/Member.vue'
 import VueMoment from 'moment'
+import VuePaginate from 'vue-paginate'
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(VueMoment)
+Vue.use(VuePaginate)
 
 const router = new VueRouter({
   history: true,
@@ -20,11 +22,6 @@ const router = new VueRouter({
 router.map({
   '/index': {
     name: 'index',
-    component: Index
-  },
-
-  '/index?tab=tech': {
-    name: 'index?tab=tech',
     component: Index
   },
 
