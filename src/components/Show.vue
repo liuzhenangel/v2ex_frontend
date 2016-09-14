@@ -24,30 +24,30 @@
         </a>
       </div>
     </div>
-
-    <hr class='uk-article-divider'>
-    <p class='topic-content'>{{ topic.content }}</p>
-
+    <p class='topic-content'>{{{ topic.content_rendered }}}</p>
   </div>
+  <reply></reply>
 </template>
 <script>
+  import Reply from './Reply'
+
   export default {
+    components: {
+      Reply
+    },
     data () {
       return {
         topic: {}
       }
     },
-
     ready: function () {
       this.initData()
     },
-
     methods: {
       initData: function () {
-        console.log('xxx')
         this.$http.get('/api/topics/show.json', {params: {id: this.$route.params.id}}).then(function (response) {
           this.$set('topic', response.body[0])
-          console.log('show xxx', response)
+          console.log('show', response)
         }).then(function (err) {
           console.log(err)
         })

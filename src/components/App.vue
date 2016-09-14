@@ -2,7 +2,7 @@
   <div class="uk-container uk-container-center" id='main'>
     <nav class='uk-navbar uk-margin-bottom'>
       <a class='uk-navbar-brand uk-hidden-small' href='/'>
-        <img src='//cdn.v2ex.co/site/logo@2x.png?m=1346064962'></img>
+        <img class='logo' src='//cdn.v2ex.co/site/logo@2x.png?m=1346064962'></img>
       </a>
       <ul class='uk-navbar-nav uk-hidden-small uk-navbar-flip'>
         <li><a href='/' v-if='! logined'>首页</a></li>

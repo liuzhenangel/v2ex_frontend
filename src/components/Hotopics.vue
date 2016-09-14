@@ -4,7 +4,7 @@
     <table class='uk-table no-margin-top-bottom'>
       <tbody>
         <tr v-for="topic in hots">
-          <td><a href="/member/{{topic.member.id}}"><img v-bind:src="topic.member.avatar_normal"></img></a></td>
+          <td width='35px'><a href="/member/{{topic.member.id}}"><img class='uk-border-radius-10' v-bind:src="topic.member.avatar_normal"></img></a></td>
           <td><a href="/show/{{topic.id}}" class='topic-title'>{{ topic.title }}</a></td>
         </tr>
       </tbody>

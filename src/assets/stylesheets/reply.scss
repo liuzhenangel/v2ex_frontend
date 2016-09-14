@@ -1,0 +1,15 @@
+.reply-content {
+  margin: 5px 0;
+  a {
+    color: #5e5e5e;
+
+    &:hover {
+      color: #909090;
+      text-decoration: none;
+    }
+  }
+}
+
+.reply-created {
+  color: #7f7f7f;
+}
