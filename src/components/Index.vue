@@ -7,7 +7,7 @@
       没有数据~
     </div>
 
-    <section v-paginate:10="topics" limit="3">
+    <section v-paginate:12="topics" limit="3">
       <div class='line' v-for='topic in topics'>
         <div class='uk-grid' data-uk-grid-margin>
           <div class='uk-width-1-10'>
