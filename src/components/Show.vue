@@ -1,7 +1,8 @@
 <template>
   <div class='uk-panel uk-panel-box'>
-    <div class='uk-grid' data-uk-grid-margin>
+    <div v-if="loading">Loading...</div>
 
+    <div v-if="!loading" class='uk-grid' data-uk-grid-margin>
       <div class='uk-width-8-10'>
         <div class='short-navigate'>
           <a href='/'>V2EX</a>
@@ -37,6 +38,7 @@
     },
     data () {
       return {
+        loading: true,
         topic: {}
       }
     },
@@ -47,6 +49,7 @@
       initData: function () {
         this.$http.get('/api/topics/show.json', {params: {id: this.$route.params.id}}).then(function (response) {
           this.$set('topic', response.body[0])
+          this.loading = false
         }).then(function (err) {
           console.log(err)
         })

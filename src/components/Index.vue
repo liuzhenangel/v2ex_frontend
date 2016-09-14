@@ -3,11 +3,12 @@
     <subnav></subnav>
     <hr class='uk-article-divider'>
 
+    <div v-if="loading">Loading...</div>
     <div class='uk-alert' v-if='isBlank()'>
       没有数据~
     </div>
 
-    <section v-paginate:12="topics" limit="3">
+    <section v-show="!loading" v-paginate:12="topics" limit="3">
       <div class='line' v-for='topic in topics'>
         <div class='uk-grid' data-uk-grid-margin>
           <div class='uk-width-1-10'>
@@ -57,6 +58,7 @@
 
     data () {
       return {
+        loading: true,
         topics: [],
         originResponseTopics: [],
         tab: ''
@@ -75,6 +77,7 @@
         this.$http.get('/api/topics/latest.json').then(function (response) {
           this.originResponseTopics = response.body
           this.fullTopics = this.categoryTopics()
+          this.loading = false
         }).then(function (err) {
           console.log(err)
         })
@@ -89,7 +92,7 @@
       },
 
       isBlank: function () {
-        return this.topics.length === 0
+        return this.topics.length === 0 && !this.loading
       },
 
       categoryTopics: function () {
