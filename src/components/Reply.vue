@@ -11,7 +11,7 @@
       </a>
       </li>
     </ul>
-    <hr>
+    <hr v-if="showPage(limitedRepliesLinks)">
     <section v-paginate:10="replies" limit="3">
       <table class='uk-table no-margin-top-bottom'>
         <tbody>
