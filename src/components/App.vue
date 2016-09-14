@@ -1,5 +1,5 @@
 <template>
-  <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom" id='main'>
+  <div class="uk-container uk-container-center" id='main'>
     <nav class='uk-navbar uk-margin-bottom'>
       <a class='uk-navbar-brand uk-hidden-small' href='/'>
         <img src='//cdn.v2ex.co/site/logo@2x.png?m=1346064962'></img>
