@@ -79,6 +79,7 @@
           this.fullTopics = this.categoryTopics()
           this.loading = false
         }).then(function (err) {
+          this.loading = false
           console.log(err)
         })
       },

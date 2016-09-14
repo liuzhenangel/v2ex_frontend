@@ -51,6 +51,7 @@
           this.$set('topic', response.body[0])
           this.loading = false
         }).then(function (err) {
+          this.loading = false
           console.log(err)
         })
       }
