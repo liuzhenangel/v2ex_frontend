@@ -11,12 +11,12 @@
     <section v-show="!loading" v-paginate:12="topics" limit="3">
       <div class='line' v-for='topic in topics'>
         <div class='uk-grid' data-uk-grid-margin>
-          <div class='uk-width-1-10'>
+          <div class='uk-width-2-10 uk-width-small-1-10'>
             <a v-link="{name: 'member', params: {id: topic.member.id}}">
               <img class='uk-border-radius-10' v-bind:src="topic.member.avatar_normal"></img>
             </a>
           </div>
-          <div class='uk-width-8-10'>
+          <div class='uk-width-6-10 uk-width-small-7-10'>
             <h2 class='uk-h3'><a v-link="{name: 'show', params: {id: topic.id}}" class='topic-title'>{{ topic.title }}</a></h2>
             <div>
               <span>{{ topic.node.title }}</span>
@@ -26,7 +26,7 @@
               <span class='created'>{{ topic.created | formatDate }}</span>
             </div>
           </div>
-          <div class='uk-width-1-10 line-height-59'>
+          <div class='uk-width-2-10 uk-width-small-1-10 line-height-59'>
             <p class='uk-text-right uk-badge uk-badge-notification'>{{ topic.replies }}</p>
           </div>
         </div>

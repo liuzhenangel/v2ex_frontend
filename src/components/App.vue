@@ -10,17 +10,33 @@
         <li><a v-link="{name: 'login'}" v-if='! logined'>登录</a></li>
         <li><a v-link="{name: 'login'}" v-if='logined'>退出</a></li>
       </ul>
+      <a href="#offcanvas" class='uk-navbar-toggle uk-visible-small' data-uk-offcanvas></a>
+      <div class='uk-navbar-brand uk-navbar-center uk-visible-small'>
+        <img class='logo' src='//cdn.v2ex.co/site/logo@2x.png?m=1346064962'></img>
+      </div>
     </nav>
 
     <div class='uk-grid' data-uk-grid-margin>
       <div class='uk-width-medium-3-4 uk-row-first'>
         <router-view></router-view>
       </div>
+
       <div class='uk-width-medium-1-4'>
         <v2ex v-bind:logined="logined"></v2ex>
         <promotion></promotion>
         <hotopics></hotopics>
         <stats></stats>
+      </div>
+    </div>
+
+    <div id='offcanvas' class='uk-offcanvas' aria-hidden="true">
+      <div class='uk-offcanvas-bar' mode='push'>
+        <ul class='uk-nav uk-nav-offcanvas'>
+          <li><a v-link="{name: 'index'}" v-if='! logined'>首页</a></li>
+          <li><a v-link="{name: 'register'}" v-if='! logined'>注册</a></li>
+          <li><a v-link="{name: 'login'}" v-if='! logined'>登录</a></li>
+          <li><a v-link="{name: 'login'}" v-if='logined'>退出</a></li>
+        </ul>
       </div>
     </div>
 
