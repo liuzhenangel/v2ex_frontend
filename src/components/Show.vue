@@ -5,7 +5,7 @@
     <div v-if="!loading" class='uk-grid' data-uk-grid-margin>
       <div class='uk-width-8-10'>
         <div class='short-navigate'>
-          <a href='/'>V2EX</a>
+          <a v-link="{name: 'index'}">V2EX</a>
           <span> › </span>
           <span>{{ topic.node.title }}</span>
         </div>
@@ -13,22 +13,24 @@
         <div>
           <span class='node-title'>{{ topic.node.title }}</span>
           •
-          <a href="/member/{{topic.member.id}}" class='username'>{{ topic.member.username }}</a>
+          <a v-link="{name: 'member', params: {id: topic.member.id}}" class='username'>{{ topic.member.username }}</a>
           •
           <span class='created'>{{ topic.created | formatDate }}</span>
         </div>
       </div>
 
       <div class='uk-width-2-10 uk-text-right'>
-        <a href="/member/{{topic.member.id}}">
+        <a v-link="{name: 'member', params: {id: topic.member.id}}">
           <img class='uk-border-radius-10' v-bind:src="topic.member.avatar_normal"></img>
         </a>
       </div>
     </div>
     <p class='topic-content'>{{{ topic.content_rendered }}}</p>
   </div>
+
   <reply></reply>
 </template>
+
 <script>
   import Reply from './Reply'
 
@@ -40,6 +42,11 @@
       return {
         loading: true,
         topic: {}
+      }
+    },
+    watch: {
+      '$route': function () {
+        this.initData()
       }
     },
     ready: function () {

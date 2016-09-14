@@ -22,7 +22,7 @@ const router = new VueRouter({
 })
 
 router.map({
-  '/index': {
+  '/': {
     name: 'index',
     component: Index
   },
@@ -43,12 +43,14 @@ router.map({
   },
 
   '/login': {
+    name: 'login',
     component: function (resolve) {
       require(['./components/Login.vue'], resolve)
     }
   },
 
   '/register': {
+    name: 'register',
     component: function (resolve) {
       require(['./components/Register.vue'], resolve)
     }
@@ -56,7 +58,7 @@ router.map({
 })
 
 router.redirect({
-  '*': '/index'
+  '*': '/'
 })
 
 router.start(App, '#app')

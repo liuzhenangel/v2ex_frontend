@@ -1,14 +1,14 @@
 <template>
   <div class="uk-container uk-container-center" id='main'>
     <nav class='uk-navbar uk-margin-bottom'>
-      <a class='uk-navbar-brand uk-hidden-small' href='/'>
+      <a class='uk-navbar-brand uk-hidden-small' v-link="{name: 'index'}">
         <img class='logo' src='//cdn.v2ex.co/site/logo@2x.png?m=1346064962'></img>
       </a>
       <ul class='uk-navbar-nav uk-hidden-small uk-navbar-flip'>
-        <li><a href='/' v-if='! logined'>首页</a></li>
-        <li><a href='/register' v-if='! logined'>注册</a></li>
-        <li><a href='/login' v-if='! logined'>登录</a></li>
-        <li><a href='/login' v-if='logined'>退出</a></li>
+        <li><a v-link="{name: 'index'}" v-if='! logined'>首页</a></li>
+        <li><a v-link="{name: 'register'}" v-if='! logined'>注册</a></li>
+        <li><a v-link="{name: 'login'}" v-if='! logined'>登录</a></li>
+        <li><a v-link="{name: 'login'}" v-if='logined'>退出</a></li>
       </ul>
     </nav>
 
@@ -26,7 +26,7 @@
 
     <div class='uk-text-center uk-margin-top' id='footer'>
       <div class='uk-panel uk-panel-box'>
-        <p><a href='http://v2ex.liuzhen.me' target='_blank'>v2ex.liuzhen.me</a> © 2016 - 2016</p>
+        <p><a v-link="{name: 'index'}">v2ex.liuzhen.me</a> © 2016 - 2016</p>
       </div>
     </div>
   </div>

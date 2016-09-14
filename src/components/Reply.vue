@@ -6,7 +6,7 @@
       <span v-if="currentRepliesPage == replieLink">
         {{ replieLink }}
       </span>
-      <a @click="changeRepliesPage(replieLink)" href="#" v-else>
+      <a @click="changeRepliesPage(replieLink)" v-else>
         {{ replieLink }}
       </a>
       </li>
@@ -16,10 +16,10 @@
       <table class='uk-table no-margin-top-bottom'>
         <tbody>
           <tr v-for="reply in replies">
-            <td width="40px"><a href="/member/{{reply.member.id}}"><img class='uk-border-radius-10' v-bind:src="reply.member.avatar_normal"></img></a></td>
+            <td width="40px"><a v-link="{name: 'member', params: {id: reply.member.id}}"><img class='uk-border-radius-10' v-bind:src="reply.member.avatar_normal"></img></a></td>
             <td>
               <span class='reply-username'>
-                <a class='username' href="/member/{{reply.member.id}}">{{reply.member.username}}</a>
+                <a class='username' v-link="{name: 'member', params: {id: reply.member.id}}">{{reply.member.username}}</a>
               </span>
               <span class='reply-created uk-text-small'>{{reply.created | formatDate}}</span>
               <p class='reply-content'>{{{ reply.content_rendered }}}</p>
@@ -40,6 +40,11 @@
     },
     ready: function () {
       this.initData()
+    },
+    watch: {
+      '$route': function () {
+        this.initData()
+      }
     },
     methods: {
       initData: function () {

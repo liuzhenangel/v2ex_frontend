@@ -12,16 +12,16 @@
       <div class='line' v-for='topic in topics'>
         <div class='uk-grid' data-uk-grid-margin>
           <div class='uk-width-1-10'>
-            <a href="/member/{{topic.member.id}}">
+            <a v-link="{name: 'member', params: {id: topic.member.id}}">
               <img class='uk-border-radius-10' v-bind:src="topic.member.avatar_normal"></img>
             </a>
           </div>
           <div class='uk-width-8-10'>
-            <h2 class='uk-h3'><a href="/show/{{topic.id}}" class='topic-title'>{{ topic.title }}</a></h2>
+            <h2 class='uk-h3'><a v-link="{name: 'show', params: {id: topic.id}}" class='topic-title'>{{ topic.title }}</a></h2>
             <div>
               <span>{{ topic.node.title }}</span>
                 •
-              <a href="/member/{{topic.member.id}}" class='username'>{{ topic.member.username }}</a>
+              <a v-link="{name: 'member', params: {id: topic.member.id}}" class='username'>{{ topic.member.username }}</a>
                 •
               <span class='created'>{{ topic.created | formatDate }}</span>
             </div>
@@ -39,7 +39,7 @@
       <span v-if="currentTopicsPage == topicLink">
         {{ topicLink }}
       </span>
-      <a @click="changeTopicsPage(topicLink)" href="#" v-else>
+      <a @click="changeTopicsPage(topicLink)" v-else>
         {{ topicLink }}
       </a>
       </li>
