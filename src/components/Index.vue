@@ -28,7 +28,7 @@
           <p class='uk-text-right uk-badge uk-badge-notification'>{{ topic.replies }}</p>
         </div>
       </div>
-      <hr class='uk-article-divider'>
+      <hr/>
     </div>
 
 </template>
