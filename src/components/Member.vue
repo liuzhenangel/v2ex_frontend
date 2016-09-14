@@ -7,7 +7,7 @@
 
       <div class='uk-width-8-10'>
         <h3 class='uk-h2'>{{member.username}}</h3>
-        <p>V2EX 第 {{member.id}} 号会员, 加入于{{member.created}}</p>
+        <p>V2EX 第 {{member.id}} 号会员, 加入于 {{member.created | formatDate}}</p>
       </div>
     </div>
   </div>

@@ -14,7 +14,7 @@
           •
           <a href="/member/{{topic.member.id}}" class='username'>{{ topic.member.username }}</a>
           •
-          <span class='created'>{{ topic.created }}</span>
+          <span class='created'>{{ topic.created | formatDate }}</span>
         </div>
       </div>
 

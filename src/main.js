@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import { formatDate } from './filters'
 import App from './components/App.vue'
 import Index from './components/Index.vue'
 import Test from './components/test.vue'
@@ -13,6 +14,8 @@ Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(VueMoment)
 Vue.use(VuePaginate)
+
+Vue.filter('formatDate', formatDate)
 
 const router = new VueRouter({
   history: true,

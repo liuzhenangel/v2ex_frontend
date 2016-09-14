@@ -21,7 +21,7 @@
               <span class='reply-username'>
                 <a class='username' href="/member/{{reply.member.id}}">{{reply.member.username}}</a>
               </span>
-              <span class='reply-created uk-text-small'>{{reply.created}}</span>
+              <span class='reply-created uk-text-small'>{{reply.created | formatDate}}</span>
               <p class='reply-content'>{{{ reply.content_rendered }}}</p>
             </td>
           </tr>
