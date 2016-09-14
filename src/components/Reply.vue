@@ -1,8 +1,8 @@
 <template>
   <div class='panel panel-default'>
     <div class="panel-heading">回复</div>
-    <ul class='uk-pagination links'>
-      <li :class="{'uk-active': currentRepliesPage == replieLink}" v-if='showPage(limitedRepliesLinks)' v-for="replieLink in limitedRepliesLinks">
+    <ul class='uk-pagination links' v-if='showPage(limitedRepliesLinks)'>
+      <li :class="{'uk-active': currentRepliesPage == replieLink}" v-for="replieLink in limitedRepliesLinks">
       <span v-if="currentRepliesPage == replieLink">
         {{ replieLink }}
       </span>
@@ -50,6 +50,9 @@
         })
       },
       showPage: function (page) {
+        if (page === undefined) {
+          return false
+        }
         if (page.length > 3) {
           return true
         } else {
