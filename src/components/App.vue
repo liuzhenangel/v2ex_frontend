@@ -32,10 +32,10 @@
     <div id='offcanvas' class='uk-offcanvas' aria-hidden="true">
       <div class='uk-offcanvas-bar' mode='push'>
         <ul class='uk-nav uk-nav-offcanvas'>
-          <li><a v-link="{name: 'index'}" v-if='! logined'>首页</a></li>
-          <li><a v-link="{name: 'register'}" v-if='! logined'>注册</a></li>
-          <li><a v-link="{name: 'login'}" v-if='! logined'>登录</a></li>
-          <li><a v-link="{name: 'login'}" v-if='logined'>退出</a></li>
+          <li><a onclick="jQuery.UIkit.offcanvas.hide()" v-link="{name: 'index'}" v-if='! logined'>首页</a></li>
+          <li><a onclick="jQuery.UIkit.offcanvas.hide()" v-link="{name: 'register'}" v-if='! logined'>注册</a></li>
+          <li><a onclick="jQuery.UIkit.offcanvas.hide()" v-link="{name: 'login'}" v-if='! logined'>登录</a></li>
+          <li><a onclick="jQuery.UIkit.offcanvas.hide()" v-link="{name: 'login'}" v-if='logined'>退出</a></li>
         </ul>
       </div>
     </div>
