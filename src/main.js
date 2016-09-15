@@ -21,6 +21,11 @@ const router = new VueRouter({
   hashbang: false
 })
 
+router.beforeEach(function (transition) {
+  window.scrollTo(0, 0)
+  transition.next()
+})
+
 router.map({
   '/': {
     name: 'index',
