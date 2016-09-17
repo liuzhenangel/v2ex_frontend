@@ -16,7 +16,7 @@
               <img class='uk-border-radius-10' v-bind:src="topic.member.avatar_normal"></img>
             </a>
           </div>
-          <div class='uk-width-6-10 uk-width-small-7-10'>
+          <div class='uk-width-6-10 uk-width-small-8-10'>
             <h2 class='uk-h3'><a v-link="{name: 'show', params: {id: topic.id}}" class='topic-title'>{{ topic.title }}</a></h2>
             <div>
               <span>{{ topic.node.title }}</span>
