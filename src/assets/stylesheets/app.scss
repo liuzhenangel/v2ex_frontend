@@ -14,5 +14,18 @@ body {
   @media (max-width: 767px) {
     padding: 0;
   }
+
+  .title {
+    color: #000;
+    font-size: 24px;
+    vertical-align: middle;
+    font-weight: 900;
+  }
+}
+
+.uk-visible-small {
+  .title {
+    font-size: 19px;
+  }
 }
 

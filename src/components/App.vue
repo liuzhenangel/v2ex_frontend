@@ -2,7 +2,7 @@
   <div class="uk-container uk-container-center" id='main'>
     <nav class='uk-navbar uk-margin-bottom'>
       <a class='uk-navbar-brand uk-hidden-small' v-link="{name: 'index'}">
-        <img class='logo' src='//cdn.v2ex.co/site/logo@2x.png?m=1346064962'></img>
+        <span class='title'>V2EX Clone</span>
       </a>
       <ul class='uk-navbar-nav uk-hidden-small uk-navbar-flip'>
         <li><a v-link="{name: 'index'}" v-if='! logined'>首页</a></li>
@@ -12,7 +12,7 @@
       </ul>
       <a href="#offcanvas" class='uk-navbar-toggle uk-visible-small' data-uk-offcanvas></a>
       <div class='uk-navbar-brand uk-navbar-center uk-visible-small'>
-        <img class='logo' src='//cdn.v2ex.co/site/logo@2x.png?m=1346064962'></img>
+        <span class='title'>V2EX Clone</span>
       </div>
     </nav>
 
