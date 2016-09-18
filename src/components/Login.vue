@@ -6,22 +6,22 @@
         <div class="uk-alert uk-alert-danger" hidden="hidden"></div>
         <div class="uk-form-row">
           <label class="uk-form-label uk-hidden-small">用户名</label>
-          <div class="uk-form-controls uk-form-icon">
+          <div class="uk-form-controls uk-width-1-1 uk-form-icon">
             <i class="uk-icon-envelope-o"></i>
-            <input class="uk-form-large uk-form-width-large" type="text" placeholder="用户名或电子邮箱" maxlength="50" v-model="username">
+            <input class="uk-form-large" type="text" placeholder="用户名或电子邮箱" maxlength="50" v-model="username">
           </div>
         </div>
 
         <div class="uk-form-row">
           <label class="uk-form-label uk-hidden-small">密码</label>
-          <div class="uk-form-controls uk-form-icon">
+          <div class="uk-form-controls uk-width-1-1 uk-form-icon">
             <i class="uk-icon-lock"></i>
-            <input class="uk-form-large uk-form-width-large" type="password" maxlength="50" v-model="password">
+            <input class="uk-form-large" type="password" maxlength="50" v-model="password">
           </div>
         </div>
 
         <div class="uk-form-row">
-          <button type="submit" class="uk-width-1-1 uk-button uk-button-primary uk-button-large"><i class="uk-icon-sign-in"></i> 登录</button>
+          <button type="submit" class="uk-width-1-1 uk-button uk-button-primary uk-button-large">登录</button>
         </div>
       </form>
     </div>
@@ -34,7 +34,7 @@ export default {
       if (this.username.trim() === '' || this.password === '') {
         this.message = '用户名或密码不能为空'
       } else {
-        this.login(this.username, this.password)
+        this.message = '对不起, 暂时不能登录'
       }
     }
   },
