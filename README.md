@@ -10,7 +10,7 @@
 
 v2ex_frontend 项目是一个利用 vue.js 和 v2ex api 实现的 V2EX 社区克隆项目, 主要目的是为了学习 vue.js, 很适合学习 vue.js 的朋友参考.
 
-这是一个前后端分离项目, 前端主要是 vue.js 和 vue-router, css 框架使用了 uikit. 后端利用 v2ex 开放的 api.
+这是一个前后端分离项目, 前端主要是 vue.js 和 vue-router, css 框架使用了 uikit. 后端利用 v2ex 开放的 api. 支持响应式布局.
 
 ## 核心技术框架
 
