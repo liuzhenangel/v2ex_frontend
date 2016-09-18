@@ -8,7 +8,7 @@
           <label class="uk-form-label uk-hidden-small">用户名</label>
           <div class="uk-form-controls uk-width-1-1 uk-form-icon">
             <i class="uk-icon-envelope-o"></i>
-            <input class="uk-form-large" type="text" placeholder="用户名或电子邮箱" maxlength="50" v-model="username">
+            <input class="uk-form-large uk-width-1-1" type="text" placeholder="用户名或电子邮箱" maxlength="50" v-model="username">
           </div>
         </div>
 
@@ -16,7 +16,7 @@
           <label class="uk-form-label uk-hidden-small">密码</label>
           <div class="uk-form-controls uk-width-1-1 uk-form-icon">
             <i class="uk-icon-lock"></i>
-            <input class="uk-form-large" type="password" maxlength="50" v-model="password">
+            <input class="uk-form-large uk-width-1-1" type="password" maxlength="50" v-model="password">
           </div>
         </div>
 

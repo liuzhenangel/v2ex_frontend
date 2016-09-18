@@ -8,7 +8,7 @@
         <label class="uk-form-label uk-hidden-small">用户名</label>
         <div class="uk-form-controls uk-width-1-1 uk-form-icon">
           <i class='uk-icon-user'></i>
-          <input class="uk-form-large" type="text" placeholder="用户名" maxlength="50" v-model="username">
+          <input class="uk-width-1-1 uk-form-large" type="text" placeholder="用户名" maxlength="50" v-model="username">
         </div>
       </div>
 
@@ -16,7 +16,7 @@
         <label class="uk-form-label uk-hidden-small">电子邮箱</label>
         <div class="uk-form-controls uk-width-1-1 uk-form-icon">
           <i class="uk-icon-envelope-o"></i>
-          <input class="uk-form-large" type="text" placeholder="电子邮箱" maxlength="50" v-model="email">
+          <input class="uk-width-1-1 uk-form-large" type="text" placeholder="电子邮箱" maxlength="50" v-model="email">
         </div>
       </div>
 
@@ -24,7 +24,7 @@
         <label class="uk-form-label uk-hidden-small">密码</label>
         <div class="uk-form-controls uk-width-1-1 uk-form-icon">
           <i class="uk-icon-lock"></i>
-          <input class="uk-form-large" type="password" placeholder="密码" maxlength="50" v-model="password">
+          <input class="uk-width-1-1 uk-form-large" type="password" placeholder="密码" maxlength="50" v-model="password">
         </div>
       </div>
 
@@ -32,7 +32,7 @@
         <label class="uk-form-label uk-hidden-small">确认密码</label>
         <div class="uk-form-controls uk-width-1-1 uk-form-icon">
           <i class="uk-icon-lock"></i>
-          <input class="uk-form-large" type="password" placeholder="确认密码" maxlength="50" v-model="password1">
+          <input class="uk-width-1-1 uk-form-large" type="password" placeholder="确认密码" maxlength="50" v-model="password1">
         </div>
       </div>
 
