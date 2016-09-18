@@ -1,0 +1,22 @@
+server {
+  listen 80;
+  server_name v2ex.liuzhen.me; // 请修改为实际域名
+  root /home/ruby/v2ex_frontend/dist; // 填写服务器上项目所在目录
+  index index.html;
+
+  location ^~ /static/ {
+    gzip_static on;
+    expires max;
+    add_header Cache-Control public;
+  }
+
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+
+  location /api { //此处为反向代理配置
+    proxy_pass https://www.v2ex.com;
+    proxy_buffers 16 4k;
+    proxy_buffer_size 2k;
+  }
+}
