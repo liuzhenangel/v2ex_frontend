@@ -3,6 +3,9 @@
     <div class="panel-heading">推广</div>
     <ul class='uk-nav uk-nav-side'>
       <li>
+        <a href='http://liuzhen.me/about' target='_blank'>个人简历</a>
+      </li>
+      <li>
         <a href='http://liuzhen.me' target='_blank'>Rina's Blog</a>
       </li>
       <li>
