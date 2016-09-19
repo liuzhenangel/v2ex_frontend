@@ -4,8 +4,11 @@
     <hr class='uk-article-divider'>
 
     <div v-if="loading">Loading...</div>
+    <div class='uk-alert uk-alert-warning' v-if='loadError'>
+      数据加载失败, 可能是V2EX API访问超过限额, 请稍候再试
+    </div>
     <div class='uk-alert' v-if='isBlank()'>
-      没有数据~
+      暂无数据
     </div>
 
     <section v-show="!loading" v-paginate:12="topics" limit="3">
@@ -59,6 +62,7 @@
     data () {
       return {
         loading: true,
+        loadError: false,
         topics: [],
         originResponseTopics: [],
         tab: ''
@@ -78,8 +82,10 @@
           this.originResponseTopics = response.body
           this.fullTopics = this.categoryTopics()
           this.loading = false
-        }).then(function (err) {
+          this.loadError = false
+        }, function (err) {
           this.loading = false
+          this.loadError = true
           console.log(err)
         })
       },
