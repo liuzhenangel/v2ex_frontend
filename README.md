@@ -68,8 +68,7 @@ $ npm run deploy
 
 vue.js 文档: <https://vuejs.org.cn/guide/overview.html>
 
-vue-router 文档: <http://router.vuejs.org/zh-cn/index.html>
-> 这个地址最近挂掉了, 可以访问这里查看api: <https://github.com/vuejs/vue-router/tree/1.0/docs/zh-cn>
+vue-router 文档: <http://router.vuejs.org>
 
 lodash 文档: <https://lodash.com/docs/4.15.0>
 
