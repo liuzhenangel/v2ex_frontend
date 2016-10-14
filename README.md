@@ -88,11 +88,11 @@ v2ex api: <https://gist.github.com/fanzeyi/6951803>, <https://www.v2ex.com/p/7v9
 
 ## Roadmap
 
-[] 登录与注册( 由于 v2ex api 未实现完全, 暂无法实现功能 )
+- [ ] 登录与注册( 由于 v2ex api 未实现完全, 暂无法实现功能 )
 
-[] Tag 过滤支持( 由于 v2ex api 未实现完全, 暂无法实现功能 )
+- [ ] Tag 过滤支持( 由于 v2ex api 未实现完全, 暂无法实现功能 )
 
-[] 用户详情页( 由于 v2ex api 未实现完全, 暂无法实现功能 )
+- [ ] 用户详情页( 由于 v2ex api 未实现完全, 暂无法实现功能 )
 
 ## LICENSE
 
