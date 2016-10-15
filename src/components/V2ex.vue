@@ -5,19 +5,14 @@
       <dd>V2EX 是一个关于分享和探索的地方</dd>
     </dl>
     <div class='uk-text-center inner line-top' v-if='! logined'>
-      <a class='uk-button' v-link="{name: 'register'}">现在注册</a>
-      <p>已注册用户请 <a v-link="{name: 'login'}">登录</a></p>
+      <router-link class='uk-button' :to="{name: 'register'}">现在注册</router-link>
+      <p>已注册用户请 <router-link :to="{name: 'login'}">登录</router-link></p>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['logined'],
-    methods: {
-      category: function (tab) {
-        this.$dispatch('tab', tab)
-      }
-    }
+    props: ['logined']
   }
 </script>

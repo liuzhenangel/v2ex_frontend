@@ -1,8 +1,8 @@
 <template>
   <div class='uk-width-1-1 uk-row-first'>
     <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#switcher-content'}">
-      <li v-bind:class="{'uk-active': isThisTab(tab.key)}" v-for="(index, tab) in tabs">
-        <a v-link="{name: 'index', query: {tab: tab.key}}">{{tab.value}}</a>
+      <li v-bind:class="{'uk-active': isThisTab(tab.key)}" v-for="(tab, index) in tabs">
+        <router-link :to="{name: 'index', query: {tab: tab.key}}">{{tab.value}}</router-link>
       </li>
     </ul>
   </div>

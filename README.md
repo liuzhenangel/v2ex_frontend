@@ -1,10 +1,36 @@
 # v2ex-frontend
 
-> A V2EX clone frontend project using Vue.js and v2ex's api
+> A V2EX clone frontend project using Vue.js v2.0 and v2ex's api
 
 ## Demo
 
 项目 Demo 请访问: <http://v2ex.liuzhen.me/>
+
+## 更新 Vue.js from 1.x to 2.0
+
+项目升级更新详情: <https://github.com/liuzhenangel/v2ex_frontend/commit/8bc0a8d87728e9e08f9207ebe0ff6e806cc704f2>
+
+第一步, 安装 [vue-migration-helper](https://github.com/vuejs/vue-migration-helper) 工具.
+
+
+``` sh
+# install
+npm install --global git://github.com/vuejs/vue-migration-helper.git
+
+# navigate to a Vue 1.x project directory
+cd path/to/my-vue-project
+
+# scan all files in the current directory
+vue-migration-helper
+# scan all files in specific sub-directories
+vue-migration-helper src folder-a folder-b
+```
+
+
+第二步, 根据提示信息修改文件中对应的地方.
+
+![Screenshot](http://i.imgur.com/aHh5TfR.png)
+
 
 ## 项目介绍
 
@@ -65,10 +91,13 @@ $ npm run deploy
 ```
 
 ## 学习参考资料
+vue.js 2.0 中文文档: <http://vuefe.cn/guide/>
 
-vue.js 文档: <https://vuejs.org.cn/guide/overview.html>
+vue.js 2.0 英文文档: <http://rc.vuejs.org/guide/installation.html>
 
-vue-router 文档: <http://router.vuejs.org>
+vue-router 2.0 文档: <http://router.vuejs.org>
+
+vue.js 1.0 文档: <https://vuejs.org.cn/guide/overview.html>
 
 lodash 文档: <https://lodash.com/docs/4.15.0>
 

@@ -1,14 +1,14 @@
 <template>
   <div class="uk-container uk-container-center" id='main'>
     <nav class='uk-navbar uk-margin-bottom'>
-      <a class='uk-navbar-brand uk-hidden-small' v-link="{name: 'index'}">
-        <span class='title'>V2EX Clone</span>
-      </a>
+      <router-link class='uk-navbar-brand uk-hidden-small' :to="{name: 'index'}">
+        <span class='title'>V2EX Clone 2.0</span>
+      </router-link>
       <ul class='uk-navbar-nav uk-hidden-small uk-navbar-flip'>
-        <li><a v-link="{name: 'index'}" v-if='! logined'>首页</a></li>
-        <li><a v-link="{name: 'register'}" v-if='! logined'>注册</a></li>
-        <li><a v-link="{name: 'login'}" v-if='! logined'>登录</a></li>
-        <li><a v-link="{name: 'login'}" v-if='logined'>退出</a></li>
+        <li><router-link :to="{name: 'index'}" v-if='! logined'>首页</router-link></li>
+        <li><router-link :to="{name: 'register'}" v-if='! logined'>注册</router-link></li>
+        <li><router-link :to="{name: 'login'}" v-if='! logined'>登录</router-link></li>
+        <li><router-link :to="{name: 'login'}" v-if='logined'>退出</router-link></li>
       </ul>
       <a href="#offcanvas" class='uk-navbar-toggle uk-visible-small' data-uk-offcanvas></a>
       <div class='uk-navbar-brand uk-navbar-center uk-visible-small'>
@@ -32,17 +32,17 @@
     <div id='offcanvas' class='uk-offcanvas' aria-hidden="true">
       <div class='uk-offcanvas-bar' mode='push'>
         <ul class='uk-nav uk-nav-offcanvas'>
-          <li><a onclick="jQuery.UIkit.offcanvas.hide()" v-link="{name: 'index'}" v-if='! logined'>首页</a></li>
-          <li><a onclick="jQuery.UIkit.offcanvas.hide()" v-link="{name: 'register'}" v-if='! logined'>注册</a></li>
-          <li><a onclick="jQuery.UIkit.offcanvas.hide()" v-link="{name: 'login'}" v-if='! logined'>登录</a></li>
-          <li><a onclick="jQuery.UIkit.offcanvas.hide()" v-link="{name: 'login'}" v-if='logined'>退出</a></li>
+          <li><router-link onclick="jQuery.UIkit.offcanvas.hide()" :to="{name: 'index'}" v-if='! logined'>首页</router-link></li>
+          <li><router-link onclick="jQuery.UIkit.offcanvas.hide()" :to="{name: 'register'}" v-if='! logined'>注册</router-link></li>
+          <li><router-link onclick="jQuery.UIkit.offcanvas.hide()" :to="{name: 'login'}" v-if='! logined'>登录</router-link></li>
+          <li><router-link onclick="jQuery.UIkit.offcanvas.hide()" :to="{name: 'login'}" v-if='logined'>退出</router-link></li>
         </ul>
       </div>
     </div>
 
     <div class='uk-text-center uk-margin-top' id='footer'>
       <div class='uk-panel uk-panel-box'>
-        <p><a v-link="{name: 'index'}">v2ex.liuzhen.me</a> © 2016 - 2016</p>
+        <p><router-link :to="{name: 'index'}">v2ex.liuzhen.me</router-link> © 2016 - 2016</p>
       </div>
     </div>
   </div>

@@ -11,20 +11,21 @@
       暂无数据
     </div>
 
-    <section v-show="!loading" v-paginate:12="topics" limit="3">
+    <section v-show="!loading">
+      <!--v-paginate:12="topics" limit="3">-->
       <div class='line' v-for='topic in topics'>
         <div class='uk-grid' data-uk-grid-margin>
           <div class='uk-width-2-10 uk-width-small-1-10'>
-            <a v-link="{name: 'member', params: {id: topic.member.id}}">
+            <router-link :to="{name: 'member', params: {id: topic.member.id}}">
               <img class='uk-border-radius-10' v-bind:src="topic.member.avatar_normal"></img>
-            </a>
+            </router-link>
           </div>
           <div class='uk-width-6-10 uk-width-small-8-10'>
-            <h2 class='uk-h3'><a v-link="{name: 'show', params: {id: topic.id}}" class='topic-title'>{{ topic.title }}</a></h2>
+            <h2 class='uk-h3'><router-link :to="{name: 'show', params: {id: topic.id}}" class='topic-title'>{{ topic.title }}</router-link></h2>
             <div>
               <span>{{ topic.node.title }}</span>
                 •
-              <a v-link="{name: 'member', params: {id: topic.member.id}}" class='username'>{{ topic.member.username }}</a>
+              <router-link :to="{name: 'member', params: {id: topic.member.id}}" class='username'>{{ topic.member.username }}</router-link>
                 •
               <span class='created'>{{ topic.created | formatDate }}</span>
             </div>
@@ -37,16 +38,16 @@
       </div>
     </section>
 
-    <ul class='uk-pagination links'>
-      <li :class="{'uk-active': currentTopicsPage == topicLink}" v-if="showPage(limitedTopicsLinks)" v-for="topicLink in limitedTopicsLinks">
-      <span v-if="currentTopicsPage == topicLink">
-        {{ topicLink }}
-      </span>
-      <a @click="changeTopicsPage(topicLink)" v-else>
-        {{ topicLink }}
-      </a>
-      </li>
-    </ul>
+    <!--<ul class='uk-pagination links'>-->
+      <!--<li :class="{'uk-active': currentTopicsPage == topicLink}" v-if="showPage(limitedTopicsLinks)" v-for="topicLink in limitedTopicsLinks">-->
+      <!--<span v-if="currentTopicsPage == topicLink">-->
+        <!--{{ topicLink }}-->
+      <!--</span>-->
+      <!--<a @click="changeTopicsPage(topicLink)" v-else>-->
+        <!--{{ topicLink }}-->
+      <!--</a>-->
+      <!--</li>-->
+    <!--</ul>-->
   </div>
 </template>
 
@@ -68,19 +69,21 @@
         tab: ''
       }
     },
-    ready: function () {
-      this.initData()
+    mounted: function () {
+      this.$nextTick(function () {
+        this.initData()
+      })
     },
     watch: {
       '$route': function () {
-        this.fullTopics = this.categoryTopics()
+        this.topics = this.categoryTopics()
       }
     },
     methods: {
       initData: function () {
         this.$http.get('/api/topics/latest.json').then(function (response) {
           this.originResponseTopics = response.body
-          this.fullTopics = this.categoryTopics()
+          this.topics = response.body
           this.loading = false
           this.loadError = false
         }, function (err) {

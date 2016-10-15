@@ -1,34 +1,36 @@
 <template>
-  <div class='uk-panel uk-panel-box'>
-    <div v-if="loading">Loading...</div>
+  <div class='wrap'>
+    <div class='uk-panel uk-panel-box'>
+      <div v-if="loading">Loading...</div>
 
-    <div v-if="!loading" class='uk-grid' data-uk-grid-margin>
-      <div class='uk-width-8-10'>
-        <div class='short-navigate'>
-          <a v-link="{name: 'index'}">V2EX</a>
-          <span> › </span>
-          <span>{{ topic.node.title }}</span>
+      <div v-if="!loading" class='uk-grid' data-uk-grid-margin>
+        <div class='uk-width-8-10'>
+          <div class='short-navigate'>
+            <router-link :to="{name: 'index'}">V2EX</router-link>
+            <span> › </span>
+            <span>{{ topic.node.title }}</span>
+          </div>
+          <h2>{{ topic.title }}</h2>
+          <div>
+            <span class='node-title'>{{ topic.node.title }}</span>
+            •
+            <router-link :to="{name: 'member', params: {id: topic.member.id}}" class='username'>{{ topic.member.username }}</router-link>
+            •
+            <span class='created'>{{ topic.created | formatDate }}</span>
+          </div>
         </div>
-        <h2>{{ topic.title }}</h2>
-        <div>
-          <span class='node-title'>{{ topic.node.title }}</span>
-          •
-          <a v-link="{name: 'member', params: {id: topic.member.id}}" class='username'>{{ topic.member.username }}</a>
-          •
-          <span class='created'>{{ topic.created | formatDate }}</span>
+
+        <div class='uk-width-2-10 uk-text-right'>
+          <router-link :to="{name: 'member', params: {id: topic.member.id}}">
+            <img class='uk-border-radius-10' v-bind:src="topic.member.avatar_normal"></img>
+          </router-link>
         </div>
       </div>
-
-      <div class='uk-width-2-10 uk-text-right'>
-        <a v-link="{name: 'member', params: {id: topic.member.id}}">
-          <img class='uk-border-radius-10' v-bind:src="topic.member.avatar_normal"></img>
-        </a>
-      </div>
+      <p class='topic-content' v-html="topic.content_rendered"></p>
     </div>
-    <p class='topic-content'>{{{ topic.content_rendered }}}</p>
-  </div>
 
-  <reply></reply>
+    <reply></reply>
+  </div>
 </template>
 
 <script>
@@ -49,13 +51,15 @@
         this.initData()
       }
     },
-    ready: function () {
-      this.initData()
+    mounted: function () {
+      this.$nextTick(function () {
+        this.initData()
+      })
     },
     methods: {
       initData: function () {
         this.$http.get('/api/topics/show.json', {params: {id: this.$route.params.id}}).then(function (response) {
-          this.$set('topic', response.body[0])
+          this.topic = response.body[0]
           this.loading = false
         }).then(function (err) {
           this.loading = false

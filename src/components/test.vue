@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <p>{{* message }}</p>
+    <p v-once="message"></p>
     <p>{{ message }}</p>
-    <p>{{{ raw_html }}}</p>
+    <p v-html="raw_html"></p>
     <p>{{ raw_html }}</p>
     <input v-model="message">
-    <a v-bind:href = "ture ? 'http://www.baidu.com' : 'http://www.baidu.com'">baidu</a>
-    <a v-bind:href.literal = 'http://www.baidu.com'>baidu</a>
+    <!--<a v-bind:href = "ture ? 'http://www.baidu.com' : 'http://www.baidu.com'">baidu</a>-->
+    <!--<a v-bind:href.literal = 'http://www.baidu.com'>baidu</a>-->
     <ul>
       <li v-for="todo in todos">
         {{ todo.text }}
@@ -14,7 +14,7 @@
     </ul>
     <button v-on:click="reverseMessage">Reverse Message</button>
 
-    <alert :show.sync="showRight" placement="top-right" duration="3000" type="success" width="400px" dismissable>
+    <alert :show="showRight" placement="top-right" duration="3000" type="success" width="400px" dismissable>
       <span class="icon-ok-circled alert-icon-float-left"></span>
       <strong>Well Done!</strong>
       <p>You successfully read this important alert message.</p>
@@ -27,22 +27,25 @@
     <ul>
       <li v-for='todo in todos'>
         <span>{{ todo.text }}</span>
-        <button v-on:click="removeTodo($index)">X</button>
+        <button v-on:click="removeTodo(index)">X</button>
       </li>
       <template v-for='todo in todos'>
         <li>{{ todo.text }}</li>
       </template>
     </ul>
 
-    <p>a={{a}} b={{b}}</p>
+    <p>v-bind:a="a" v-bind:b="b"></p>
     <p>{{ fullName }}</p>
 
     <p v-bind:class='classObject'></p>
     <p v-show='true'>v-show</p>
-    <p v-else>v-else</p>
 
-    <div v-if='true' transition='expand'>hello</div>
-    <div v-if='true' :transition='transitionName'>hello</div>
+    <transition name='expand'>
+      <div v-if='true'>hello</div>
+    </transition>
+    <transition name='transitionName'>
+      <div v-if='true'>hello</div>
+    </transition>
   </div>
 </template>
 
@@ -103,12 +106,12 @@
   }
 </script>
 <style>
-  .expand-enter, .expand-leave {
+  .expand-enter, .expand-leave-active {
     height: 0;
     padding: 0 10px;
     opacity: 0;
   }
-  .expand-transition {
+  .expand-enter-active, .expand-leave-active{
     transition: all .3s ease;
     height: 30px;
     padding: 10px;

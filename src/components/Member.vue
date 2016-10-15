@@ -19,15 +19,15 @@
         member: {}
       }
     },
-
-    ready: function () {
-      this.initData()
+    mounted: function () {
+      this.$nextTick(function () {
+        this.initData()
+      })
     },
-
     methods: {
       initData: function () {
         this.$http.get('/api/members/show.json', {params: {id: this.$route.params.id}}).then(function (response) {
-          this.$set('member', response.body)
+          this.member = response.body
         }).then(function (err) {
           console.log(err)
         })

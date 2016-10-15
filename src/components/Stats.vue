@@ -21,18 +21,20 @@
   export default {
     data () {
       return {
-        stats: []
+        stats: {}
       }
     },
 
-    ready: function () {
-      this.initData()
+    mounted: function () {
+      this.$nextTick(function () {
+        this.initData()
+      })
     },
 
     methods: {
       initData: function () {
         this.$http.get('/api/site/stats.json').then(function (response) {
-          this.$set('stats', response.body)
+          this.stats = response.body
         }).then(function (err) {
           console.log(err)
         })
