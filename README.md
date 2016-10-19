@@ -31,6 +31,32 @@ vue-migration-helper src folder-a folder-b
 
 ![Screenshot](http://i.imgur.com/aHh5TfR.png)
 
+## 支持服务端渲染
+
+代码更改详情: <>
+
+服务端渲染文档: <http://vuefe.cn/guide/ssr.html>
+
+支持服务端渲染主要修改的是加一个中间件 `server.js`, 另外一个需要注意的地方是配置服务端渲染后 `vue-resource` 加载时会报一个 `document is not defined` 错误, 错误详情可以查看这个 [Issue](https://github.com/vuejs/vue-resource/issues/455), 处理这个问题的方法是: 
+
+把这两行代码 
+
+
+`import VueResource from 'vue-resource'`
+
+`Vue.use(VueResource)`
+
+
+改成下面的方式
+
+`const inBrowser = typeof window !== 'undefined'`
+
+`if (inBrowser) {`
+
+   `Vue.use(require('vue-resource'))`
+   
+`}`
+
 
 ## 项目介绍
 

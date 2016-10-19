@@ -52,7 +52,7 @@
 </template>
 
 <script>
-  import Subnav from './Subnav'
+  import Subnav from './Subnav.vue'
   import _ from 'lodash'
 
   export default {

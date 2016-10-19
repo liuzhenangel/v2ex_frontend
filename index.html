@@ -7,11 +7,22 @@
     <link href="//cdn.bootcss.com/uikit/2.26.4/css/uikit.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/uikit/2.26.4/css/uikit.gradient.min.css" rel="stylesheet">
     <link rel="icon" href="/static/favicon.ico?v=2" type="image/x-icon">
+    {{ STYLE }}
   </head>
   <body>
-    <div id='app'></div>
+    {{ APP }}
+    <script src="/dist/client-vendor-bundle.js"></script>
+    <script src="/dist/client-bundle.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-84193349-1', 'auto');
+      ga('send', 'pageview');
+    </script>
     <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-    <script lang="coffee" src="/static/googleanalytics.js"></script>
     <script src="//cdn.bootcss.com/uikit/2.26.4/js/uikit.min.js"></script>
   </body>
 </html>

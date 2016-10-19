@@ -1,5 +1,5 @@
 <template>
-  <div class="uk-container uk-container-center" id='main'>
+  <div class="uk-container uk-container-center" id='app'>
     <nav class='uk-navbar uk-margin-bottom'>
       <router-link class='uk-navbar-brand uk-hidden-small' :to="{name: 'index'}">
         <span class='title'>V2EX Clone 2.0</span>
@@ -46,7 +46,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <style lang="sass">
@@ -54,10 +53,10 @@
 </style>
 
 <script>
-  import V2ex from './V2ex'
-  import Promotion from './Promotion'
-  import Hotopics from './Hotopics'
-  import Stats from './Stats'
+  import V2ex from './V2ex.vue'
+  import Promotion from './Promotion.vue'
+  import Hotopics from './Hotopics.vue'
+  import Stats from './Stats.vue'
   export default {
     components: {
       V2ex,

@@ -34,7 +34,7 @@
 </template>
 
 <script>
-  import Reply from './Reply'
+  import Reply from './Reply.vue'
 
   export default {
     components: {
