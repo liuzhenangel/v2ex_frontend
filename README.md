@@ -37,7 +37,7 @@ vue-migration-helper src folder-a folder-b
 
 服务端渲染文档: <http://vuefe.cn/guide/ssr.html>
 
-支持服务端渲染主要修改的是加一个中间件 `server.js`, 另外一个需要注意的地方是配置服务端渲染后 `vue-resource` 加载时会报一个 `document is not defined` 错误, 错误详情可以查看这个 [Issue](https://github.com/vuejs/vue-resource/issues/455), 处理这个问题的方法是:
+支持服务端渲染主要修改的是加一个中间件 `server.js`, 有一个需要注意的地方是配置服务端渲染后 `vue-resource` 加载时会报一个 `document is not defined` 错误, 错误详情可以查看这个 [Issue](https://github.com/vuejs/vue-resource/issues/455), 处理这个问题的方法是:
 
 把这两行代码
 
@@ -57,6 +57,7 @@ vue-migration-helper src folder-a folder-b
 
 `}`
 
+另外一个注意点是: 支持服务端渲染一些 package 的版本要升级, 具体可以查看 [更改详情](https://github.com/liuzhenangel/v2ex_frontend/commit/127d7235cb36422d83aa1bd242085c909d8608ee) 中的 `package.json` 文件
 
 ## 项目介绍
 
