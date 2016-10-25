@@ -3,6 +3,12 @@
 body {
   background-color: $my-body-bg;
 }
+.uk-offcanvas-page-body {
+  width: 414px;
+  height: 736px;
+  margin-left: 270px;
+  background-color: $my-body-bg;
+}
 #app {
   img.logo { width: 71px; }
 }

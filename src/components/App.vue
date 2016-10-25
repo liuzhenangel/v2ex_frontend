@@ -1,5 +1,5 @@
 <template>
-  <div class="uk-container uk-container-center" id='app'>
+  <div v-bind:class="['uk-container', 'uk-container-center', {'uk-offcanvas-page-body': open}]" id='app'>
     <nav class='uk-navbar uk-margin-bottom'>
       <router-link class='uk-navbar-brand uk-hidden-small' :to="{name: 'index'}">
         <span class='title'>V2EX Clone 2.0</span>
@@ -10,7 +10,7 @@
         <li><router-link :to="{name: 'login'}" v-if='! logined'>登录</router-link></li>
         <li><router-link :to="{name: 'login'}" v-if='logined'>退出</router-link></li>
       </ul>
-      <a href="#offcanvas" class='uk-navbar-toggle uk-visible-small' data-uk-offcanvas></a>
+      <a v-on:click='changeOpen' class='uk-navbar-toggle uk-visible-small' data-uk-offcanvas></a>
       <div class='uk-navbar-brand uk-navbar-center uk-visible-small'>
         <span class='title'>V2EX Clone</span>
       </div>
@@ -29,13 +29,13 @@
       </div>
     </div>
 
-    <div id='offcanvas' class='uk-offcanvas' aria-hidden="true">
-      <div class='uk-offcanvas-bar' mode='push'>
+    <div id='offcanvas' v-on:click='changeOpen' v-bind:class="['uk-offcanvas', {'uk-active': open}]" aria-hidden='false'>
+      <div v-bind:class="['uk-offcanvas-bar', 'uk-offcanvas-page', {'uk-offcanvas-bar-show': open}]" mode='push'>
         <ul class='uk-nav uk-nav-offcanvas'>
-          <li><router-link onclick="jQuery.UIkit.offcanvas.hide()" :to="{name: 'index'}" v-if='! logined'>首页</router-link></li>
-          <li><router-link onclick="jQuery.UIkit.offcanvas.hide()" :to="{name: 'register'}" v-if='! logined'>注册</router-link></li>
-          <li><router-link onclick="jQuery.UIkit.offcanvas.hide()" :to="{name: 'login'}" v-if='! logined'>登录</router-link></li>
-          <li><router-link onclick="jQuery.UIkit.offcanvas.hide()" :to="{name: 'login'}" v-if='logined'>退出</router-link></li>
+          <li><router-link :to="{name: 'index'}" v-if='! logined'>首页</router-link></li>
+          <li><router-link :to="{name: 'register'}" v-if='! logined'>注册</router-link></li>
+          <li><router-link :to="{name: 'login'}" v-if='! logined'>登录</router-link></li>
+          <li><router-link :to="{name: 'login'}" v-if='logined'>退出</router-link></li>
         </ul>
       </div>
     </div>
@@ -66,8 +66,14 @@
     },
     data () {
       return {
-        logined: false
+        logined: false,
+        open: false
       }
-    }
+    },
+    methods: {
+      changeOpen () {
+        this.open = ! this.open
+      }
+    },
   }
 </script>
