@@ -41,21 +41,23 @@ vue-migration-helper src folder-a folder-b
 
 把这两行代码
 
+```javascript
+import VueResource from 'vue-resource'
 
-`import VueResource from 'vue-resource'`
-
-`Vue.use(VueResource)`
-
+Vue.use(VueResource)
+```
 
 改成下面的方式
 
-`const inBrowser = typeof window !== 'undefined'`
+```javascript
+const inBrowser = typeof window !== 'undefined'
 
-`if (inBrowser) {`
+if (inBrowser) {
 
-   `Vue.use(require('vue-resource'))`
+   Vue.use(require('vue-resource'))
 
-`}`
+}
+```
 
 另外一个注意点是: 支持服务端渲染一些 package 的版本要升级, 具体可以查看 [更改详情](https://github.com/liuzhenangel/v2ex_frontend/commit/127d7235cb36422d83aa1bd242085c909d8608ee) 中的 `package.json` 文件
 
