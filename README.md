@@ -134,11 +134,17 @@ uikit 文档: <http://getuikit.com/index.html>
 
 v2ex api: <https://gist.github.com/fanzeyi/6951803>, <https://www.v2ex.com/p/7v9TEc53>
 
-## React.js 项目
+## 引荐 React.js 项目
 
 项目 Demo 请访问: <http://ruby-china.liuzhen.me/>
 
 项目代码: <https://github.com/liuzhenangel/react-ruby-china>
+
+## 引荐个人博客项目
+
+项目 Demo 请访问: <http://liuzhen.me/>
+
+项目代码: <https://github.com/liuzhenangel/RBlog>
 
 ## 贡献者
 
