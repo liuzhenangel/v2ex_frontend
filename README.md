@@ -12,7 +12,7 @@
 
 ## 电商小程序
 
-项目链接: <https://3hxz.com/>
+项目链接: <https://www.3hxz.com/>
 
 ## 更新 Vue.js from 1.x to 2.0
 
