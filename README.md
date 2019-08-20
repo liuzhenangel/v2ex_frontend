@@ -6,6 +6,11 @@
 
 项目 Demo 请访问: <http://v2ex.liuzhen.me/>
 
+## 推广(程序员面试助手工具)
+
+链接: <http://showmebug.dao42.com/>
+
+
 ## 更新 Vue.js from 1.x to 2.0
 
 项目升级更新详情: <https://github.com/liuzhenangel/v2ex_frontend/commit/8bc0a8d87728e9e08f9207ebe0ff6e806cc704f2>
