@@ -6,10 +6,13 @@
 
 项目 Demo 请访问: <http://v2ex.liuzhen.me/>
 
-## 推广(程序员面试助手工具)
+## 程序员面试助手工具
 
 链接: <http://showmebug.dao42.com/>
 
+## 电商小程序
+
+项目链接: <https://3hxz.com/>
 
 ## 更新 Vue.js from 1.x to 2.0
 
