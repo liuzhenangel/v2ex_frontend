@@ -69,7 +69,7 @@
     "mocha": "^2.4.5",
     "marked": "^0.3.6",
     "nightwatch": "^0.8.18",
-    "node-sass": "^3.9.3",
+    "node-sass": "^4.14.1",
     "coffee-script": "^1.10.0",
     "ora": "^0.2.0",
     "phantomjs-prebuilt": "^2.1.3",
