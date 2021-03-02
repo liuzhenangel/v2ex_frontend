@@ -4,15 +4,15 @@
 
 ## Demo
 
-项目 Demo 请访问: <http://v2ex.liuzhen.me/>
+项目 Demo 请访问: <http://v2ex.xiguamingpian.com>
 
 ## 程序员面试助手工具
 
-链接: <http://showmebug.dao42.com/>
+链接: <http://showmebug.com/>
 
-## 电商小程序
+## 西瓜名片
 
-项目链接: <https://www.3hxz.com/>
+项目链接: <https://www.xiguamingpian.com/>
 
 ## 更新 Vue.js from 1.x to 2.0
 
@@ -144,13 +144,13 @@ v2ex api: <https://gist.github.com/fanzeyi/6951803>, <https://www.v2ex.com/p/7v9
 
 ## 引荐 React.js 项目
 
-项目 Demo 请访问: <http://ruby-china.liuzhen.me/>
+项目 Demo 请访问: <http://ruby-china.xiguamingpian.com/>
 
 项目代码: <https://github.com/liuzhenangel/react-ruby-china>
 
 ## 引荐个人博客项目
 
-项目 Demo 请访问: <http://liuzhen.me/>
+项目 Demo 请访问: <http://blog.xiguamingpian.com/>
 
 项目代码: <https://github.com/liuzhenangel/RBlog>
 
